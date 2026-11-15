@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "minesql"
+version = "0.1.0"
+description = "A MySQL terminal that only suggests the NEXT SQL piece — schema-aware ghost-text autocomplete for your SQL sessions."
+readme = "README.md"
+license = "MIT"
+authors = [
+    { name = "IMApurbo" }
+]
+requires-python = ">=3.8"
+keywords = ["mysql", "sql", "cli", "autocomplete", "repl", "terminal", "ghost-text", "prompt_toolkit"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Database",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Terminals",
+]
+dependencies = [
+    "prompt_toolkit>=3.0",
+    "PyMySQL>=1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "build>=1.0",
+    "twine>=4.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/IMApurbo/minesql"
+Repository = "https://github.com/IMApurbo/minesql"
+Issues = "https://github.com/IMApurbo/minesql/issues"
+
+[project.scripts]
+minesql = "minesql.cli:main"
+
+[tool.setuptools]
+packages = ["minesql"]
